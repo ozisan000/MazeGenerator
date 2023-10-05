@@ -13,7 +13,7 @@ namespace maze {
      * TODO: 迷路を生成する
      */
     //% block
-    export function GenerateMaze(x: number, y: number): number[][][] {
+    export function GenerateMaze(x: number = 15, y: number = 15): number[][][] {
         // Add code here
         genelator = new MazeGenerator(x,y)
         return genelator.searchData
@@ -23,8 +23,8 @@ namespace maze {
      * TODO: 生成した迷路を表示する
      */
     //% block
-    export function MazeView(){
-        if(genelator != null && genelator.searchData != null){ 
+    export function MazeView(): void{
+        if (genelator != null && genelator.searchData != null){
             genelator.MazeView()
         }else{
             player.say("※迷路が生成されていません！")
@@ -35,7 +35,7 @@ namespace maze {
     * TODO: 生成した迷路をブロックに変換する
     */
     //% block
-    export function MazeToBlocks(baseY: number, upY: number = 3, originX: number = 0, originZ: number = 0){
+    export function MazeToBlocks(baseY: number, upY: number = 3, originX: number = 0, originZ: number = 0):void{
         if (genelator != null && genelator.searchData != null) { 
             genelator.MazeToBlocks(baseY, upY, originX, originZ) 
         } else {
