@@ -31,6 +31,10 @@ namespace maze {
         }
     }
 
+    /**
+    * TODO: 生成した迷路を表示する
+    */
+    //% block
     export function MazeToBlocks(baseY: number, upY: number = 3, originX: number = 0, originZ: number = 0){
         if (genelator != null && genelator.searchData != null) { 
             genelator.MazeToBlocks(baseY, upY, originX, originZ) 
