@@ -43,7 +43,6 @@ namespace maze {
         }
     }
 
-    //% block
     class MazeGenerator {
         static searchData: number[][][]
         private ___searchData_is_set: boolean
