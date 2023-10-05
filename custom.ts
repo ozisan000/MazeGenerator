@@ -32,7 +32,7 @@ namespace maze {
     }
 
     /**
-    * TODO: 生成した迷路を表示する
+    * TODO: 生成した迷路をブロックに変換する
     */
     //% block
     export function MazeToBlocks(baseY: number, upY: number = 3, originX: number = 0, originZ: number = 0){
