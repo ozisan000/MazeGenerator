@@ -87,12 +87,12 @@ namespace maze {
             for (let i = 0; i < this.searchData.length; i++) {
                 out = ""
                 for (let j = 0; j < this.searchData[i].length; j++) {
-                    if (this.searchData[i][j][0] == 1) {
+                    if(this.searchData[i][j][0] == 1) {
                         out += "■"
-                    } else if (this.searchData[i][j][0] == 2){
+                    }else if(this.searchData[i][j][0] == 2){
                         out += "●"
-                    } else if (this.searchData[i][j][0] == 3) {
-                    out += "★"
+                    }else if(this.searchData[i][j][0] == 3) {
+                        out += "★"
                     }else{
                         out += "　"
                     }
