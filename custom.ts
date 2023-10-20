@@ -89,10 +89,13 @@ namespace maze {
                 for (let j = 0; j < this.searchData[i].length; j++) {
                     if (this.searchData[i][j][0] == 1) {
                         out += "■"
-                    } else {
+                    } else if (this.searchData[i][j][0] == 2){
+                        out += "●"
+                    } else if (this.searchData[i][j][0] == 3) {
+                    out += "★"
+                    }else{
                         out += "　"
                     }
-
                 }
                 player.say(out)
             }
