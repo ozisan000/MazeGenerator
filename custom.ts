@@ -95,12 +95,13 @@ namespace maze {
             let checkCnt: number;
             let checkDirBuffer: number[];
             let isWall: boolean;
+            let isStart :boolean;
             let checkDir: number;
             let isIndexOutRange1: any;
             let isIndexOutRange2: any;
             let isIndexOut: any;
             // マップ情報,探索済みかどうか
-            // 情報 0 = 空気 1 = 壁
+            // 情報 0 = 空気 1 = 壁 2 = スタート 3 = ゴール
             // 探索状況 0 = 未探索 1 = 探索済み
             let progressCount = 0
             let searchMapXMax = x - 2
@@ -129,8 +130,11 @@ namespace maze {
             //      rDigY = randint(1 ,searchMapYMax)
             rDigX = 1
             rDigY = 1
+
+            isStart = true
+
             this.searchData[rDigY][rDigX][0] = 0
-            this.searchData[rDigY][rDigX][1] = 1
+            this.searchData[rDigY][rDigX][1] = 2
             // メインループ
             while (true) {
                 searchMax = 0
@@ -141,7 +145,6 @@ namespace maze {
                         if (this.searchData[i][j][1] == 1) {
                             searchMax += 1
                         }
-
                     }
                 }
                 // player.say(">>Search :" + searchMax + " MapMax:" + mapMax)
@@ -151,6 +154,12 @@ namespace maze {
                     break
                 } else if (isSearch) {
                     isSearch = false
+
+                    if(isStart){
+                        isStart = false
+                        this.searchData[rDigY][rDigX][0] = 3
+                    }
+
                     rDigX = randint(1, searchMapXMax)
                     rDigY = randint(1, searchMapYMax)
                     // 道かどうか && !(X座標が偶数か && Y座標が偶数か)でない場合もう一度探索
