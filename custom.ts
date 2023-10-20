@@ -43,6 +43,22 @@ namespace maze {
         }
     }
 
+    /**
+    * TODO: スタートの座標を取得する
+    */
+    //% block
+    export function StartMazePos(baseY: number):Position{
+        return world(genelator.startPosX, baseY,genelator.startPosZ)
+    }
+
+    /**
+    * TODO: ゴールの座標を取得する
+    */
+    //% block
+    export function GoalMazePos(baseY: number):Position{
+        return world(genelator.goalPosX, baseY, genelator.goalPosZ)
+    }
+
     class MazeGenerator {
         static searchData: number[][][]
         private ___searchData_is_set: boolean
