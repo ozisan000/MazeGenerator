@@ -64,10 +64,11 @@ namespace maze {
             for (let i = 0; i < this.searchData.length; i++) {
                 out = ""
                 for (let j = 0; j < this.searchData[i].length; j++) {
-                    if (this.searchData[i][j][0] == 0) {
-                        out += "　"
-                    } else {
+                    if (this.searchData[i][j][0] == 1) {
+                        
                         out += "■"
+                    } else {
+                        out += "　"
                     }
 
                 }
