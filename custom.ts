@@ -160,8 +160,8 @@ namespace maze {
             isStart = true
             this.startPosX = rDigX
             this.startPosZ = rDigY
-            this.searchData[rDigY][rDigX][0] = 0
-            this.searchData[rDigY][rDigX][1] = 2
+            this.searchData[rDigY][rDigX][0] = 2
+            this.searchData[rDigY][rDigX][1] = 1
             // メインループ
             while (true) {
                 searchMax = 0
