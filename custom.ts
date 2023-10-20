@@ -47,6 +47,13 @@ namespace maze {
         static searchData: number[][][]
         private ___searchData_is_set: boolean
         private ___searchData: number[][][]
+
+        public startPosX :number
+        public startPosZ :number
+
+        public goalPosX :number
+        public goalPosZ :number
+
         get searchData(): number[][][] {
             return this.___searchData_is_set ? this.___searchData : MazeGenerator.searchData
         }
@@ -132,7 +139,8 @@ namespace maze {
             rDigY = 1
 
             isStart = true
-
+            this.startPosX = rDigX
+            this.startPosZ = rDigY
             this.searchData[rDigY][rDigX][0] = 0
             this.searchData[rDigY][rDigX][1] = 2
             // メインループ
@@ -158,6 +166,8 @@ namespace maze {
                     if(isStart){
                         isStart = false
                         this.searchData[rDigY][rDigX][0] = 3
+                        this.goalPosX = rDigX
+                        this.goalPosZ = rDigY
                     }
 
                     rDigX = randint(1, searchMapXMax)
