@@ -65,7 +65,6 @@ namespace maze {
                 out = ""
                 for (let j = 0; j < this.searchData[i].length; j++) {
                     if (this.searchData[i][j][0] == 1) {
-                        
                         out += "■"
                     } else {
                         out += "　"
