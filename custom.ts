@@ -90,9 +90,9 @@ namespace maze {
                     if(this.searchData[i][j][0] == 1) {
                         out += "■"
                     }else if(this.searchData[i][j][0] == 2){
-                        out += "●"
+                        out += "S"
                     }else if(this.searchData[i][j][0] == 3) {
-                        out += "★"
+                        out += "G"
                     }else{
                         out += "　"
                     }
