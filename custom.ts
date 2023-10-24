@@ -9,6 +9,8 @@
 //% weight=100 color=#0fbc11 icon=""
 namespace maze {
     let genelator: MazeGenerator
+    let isStopTimer = false
+
     /**
      * TODO: 迷路を生成する
      */
@@ -73,6 +75,35 @@ namespace maze {
     //% block
     export function CameraReset(){
         player.execute("/camera @a clear")
+    }
+
+    /**
+    * TODO: タイマーをスタートする
+    */
+    //% block
+    export function StartTimer(){
+        loops.runInBackground(function Timer() {
+            let time = 0.0
+            while (!isStopTimer) {
+                loops.pause(1000)
+                time -= 1
+                if (time % 10 == 0) {
+                    player.say(time + "s")
+                }
+
+                if(time <= 0){
+                    isStopTimer = true
+                }
+            }
+        })
+    }
+
+    /**
+    * TODO: タイマーが止まっているかどうか
+    */
+    //% block
+    export function IsStopTimer(){
+        return isStopTimer
     }
 
     class MazeGenerator {
