@@ -81,9 +81,9 @@ namespace maze {
     * TODO: タイマーをスタートする
     */
     //% block
-    export function StartTimer(){
+    export function StartTimer(rimitTime:number){
         loops.runInBackground(function Timer() {
-            let time = 0.0
+            let time = rimitTime
             while (!isStopTimer) {
                 loops.pause(1000)
                 time -= 1
