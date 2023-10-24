@@ -106,6 +106,10 @@ namespace maze {
         return isStopTimer
     }
 
+    /**
+    * TODO: タイマーを手動でストップする
+    */
+    //% block
     export function SetStopTimer(flag:boolean){
         isStopTimer = flag
     }
