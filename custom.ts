@@ -106,6 +106,10 @@ namespace maze {
         return isStopTimer
     }
 
+    export function SetStopTimer(flag:boolean){
+        isStopTimer = flag
+    }
+
     class MazeGenerator {
         static searchData: number[][][]
         private ___searchData_is_set: boolean
