@@ -59,6 +59,22 @@ namespace maze {
         return world(genelator.goalPosX, baseY, genelator.goalPosZ)
     }
 
+    /**
+    * TODO: カメラをフカンで移動する
+    */
+    //% block
+    export function MoveCamera(x:number , y:number,z:number,moveSpeed:number = 0.5){
+        player.execute("/camera @a set minecraft:free ease " + moveSpeed + " linear pos " + x + " " + y + " " + z + " rot 90 180")
+    }
+
+    /**
+    * TODO: カメラをリセットする
+    */
+    //% block
+    export function CameraReset(){
+        player.execute("/camera @a clear")
+    }
+
     class MazeGenerator {
         static searchData: number[][][]
         private ___searchData_is_set: boolean
